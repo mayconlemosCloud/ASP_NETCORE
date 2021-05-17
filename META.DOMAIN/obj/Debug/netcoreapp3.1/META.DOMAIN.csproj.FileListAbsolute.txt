@@ -1,0 +1,9 @@
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\bin\Debug\netcoreapp3.1\META.DOMAIN.deps.json
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\bin\Debug\netcoreapp3.1\META.DOMAIN.dll
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\bin\Debug\netcoreapp3.1\META.DOMAIN.pdb
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\obj\Debug\netcoreapp3.1\META.DOMAIN.AssemblyInfoInputs.cache
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\obj\Debug\netcoreapp3.1\META.DOMAIN.AssemblyInfo.cs
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\obj\Debug\netcoreapp3.1\META.DOMAIN.csproj.CoreCompileInputs.cache
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\obj\Debug\netcoreapp3.1\META.DOMAIN.dll
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\obj\Debug\netcoreapp3.1\META.DOMAIN.pdb
+C:\Users\maycon.lemos\source\repos\META\META.DOMAIN\obj\Debug\netcoreapp3.1\META.DOMAIN.csprojAssemblyReference.cache

@@ -1,0 +1,184 @@
+﻿@using META.DOMAIN
+
+
+
+@model IEnumerable<META.DOMAIN.Emissoras>
+
+
+
+    @{
+        ViewData["Title"] = "View";
+        Emissoras emissoras = new Emissoras();
+       
+    }
+
+    <h1 class="my-5">Audiência por emissora</h1>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col mt-5">
+                <button type="button" class="btn btn-primary" onclick="CarregarEmissoras()" data-toggle="modal" data-target="#exampleModal">
+                    Cadastrar Emissoras
+                </button>
+            </div> <br />
+            <div class="col mt-5">
+                <button type="button" class="btn btn-primary" onclick="CarregarEmissoras()" data-toggle="modal" data-target="#cadastrarAudiencia">
+                    Cadastrar Audiência
+                </button>
+            </div>
+        </div>
+
+        <div class="col-sm-2">
+            <div class="form-group my-5">
+
+                <select class="custom-select " id="Visao" name="Visao">
+                    <option selected>Escola  a visão desejada...</option>
+                    <option value="1">Somatório dos pontos</option>
+                    <option value="2">Média dos pontos</option>
+                </select>
+
+
+            </div>
+        </div>
+
+        <table id="table_id" class="table mt-5">
+            <thead>
+                <tr>
+
+                    <th>
+                        Emissoras
+                    </th>
+                    <th>
+                        Pontos
+                    </th>
+                    <th>
+                        Data e Hora
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EMISSORAS)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.audiencias.Pontos_audiencia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.audiencias.Data_hora_audiencia)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+
+
+
+    </div>
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastro Emissora</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="form2" onsubmit="return false;">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="NomeEmissora">Nome da Emissora</label>
+                            <input type="text" required class="form-control" id="NomeEmissora" name="NomeEmissora" placeholder="Digite o nome da emissoara">
+                            <span asp-validation-for="@emissoras.EMISSORAS" class="text-danger"></span>
+
+                        </div>
+
+
+                        <table id="table_id_emissora" class="table my-5">
+                         
+                                <tr>
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                       Emissoras
+                                    </th>
+                                    <th>
+                                        Ações
+                                    </th>
+                                </tr>
+                            
+                          
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" onclick="CadastrarEmissora()" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="modal fade" id="cadastrarAudiencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cadastro Emissora</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="form1" onsubmit="return false;">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="Pontos_audiencia">Pontos de audiência</label>
+                            <input type="number" required class="form-control" id="Pontos_audiencia">
+
+                        </div>
+                        <div class="form-group">
+
+                            <select class="custom-select" id="optEmissora" name="nomeEmissora">
+
+                                <option selected>Escola a emissora...</option>
+                               
+                                   
+
+                              
+                            </select>
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" onclick="CadastrarAudiencia()" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
